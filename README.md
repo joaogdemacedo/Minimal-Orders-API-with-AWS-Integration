@@ -64,15 +64,24 @@ Minimal-Orders-API-with-AWS-Integration/
 └── LICENSE
 ```
 
+## ⚙️ Requirements
+
+To run this project locally or deploy to AWS, you must have:
+
+- Python 3.11+
+- AWS CLI installed
+- Docker installed & running (for Lambda packaging via CDK)
+- AWS credentials configured (`aws configure`) with necessary permissions
+
+> ⚠️ You must have valid AWS credentials and a default region set to run or deploy this app.
 ---
+
 
 ## ⚙️ Local Setup
 
 ```bash
 git clone https://github.com/your-username/orders-api.git
 cd orders_api
-python3 -m venv venv
-source venv/bin/activate
 pip install -r requirements.txt
 export PYTHONPATH=./app
 ```
@@ -93,8 +102,6 @@ Open Swagger UI at: [http://localhost:8000/docs](http://localhost:8000/docs)
 
 ```bash
 cd infra
-python3 -m venv .venv
-source .venv/bin/activate
 pip install -r requirements.txt
 cdk deploy
 > ⚠️ **Note**: Make sure Docker is running. CDK uses Docker to bundle the Lambda function using the correct architecture for AWS.
@@ -108,7 +115,7 @@ Your API will be available at the printed endpoint (e.g. `https://xyz.execute-ap
 
 A Postman collection is available to test the API endpoints.
 
-- File: `postman/Orders-API.postman_collection.json`
+- File: `Orders-API.postman_collection.json`
 - Format: Postman 2.1
 - Includes login, JWT-protected routes, and pagination
 
