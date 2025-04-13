@@ -46,6 +46,7 @@ class OrderService:
 
         response = db.orders_table.scan(**scan_kwargs)
         orders = [Order(**item) for item in response.get("Items", [])]
+        orders = sorted(orders, key=lambda o: o.createdAt, reverse=True)  # newest first
         logger.info(f"Retrieved {len(orders)} orders")
 
         # Encode LastEvaluatedKey for the client to use as next_key

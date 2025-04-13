@@ -12,13 +12,13 @@ logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/orders", tags=["Orders"])
 
 # Create a new order
-@router.post("/create", response_model=Order)
+@router.post("", response_model=Order)
 def create_order(order_data: OrderCreate, user_id: str = Depends(get_current_user)):
     print(f"POST /orders by user: {user_id} | data: {order_data}")
     return OrderService.create_order(order_data)
 
 # Get a list of all orders
-@router.get("/", response_model=PaginatedOrders)
+@router.get("", response_model=PaginatedOrders)
 def list_orders(
     limit: int = Query(10, ge=1, le=100),  # limit must be 1 ≤ limit ≤ 100
     start_key: Optional[str] = None,

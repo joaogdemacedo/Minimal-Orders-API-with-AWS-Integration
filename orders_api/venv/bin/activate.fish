@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV /home/joao/Backend-test/orders_api/venv
+set -gx VIRTUAL_ENV /home/joao/Minimal-Orders-API-with-AWS-Integration/orders_api/venv
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/"bin $PATH
