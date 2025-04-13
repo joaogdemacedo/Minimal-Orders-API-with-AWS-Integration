@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "fcbc2cca-fef0-4474-8170-ad7fa49eba78",
+		"name": "TheAfterCancer - Orders API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37886916"
+	},
+	"item": [
+		{
+			"name": "Get JWT token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"string\",\r\n  \"password\": \"string\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://633ob0n708.execute-api.eu-west-2.amazonaws.com/prod/login",
+					"protocol": "https",
+					"host": [
+						"633ob0n708",
+						"execute-api",
+						"eu-west-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a new order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyLTEyMyIsImV4cCI6MTc3NjA3MzA4N30.lJuDuaPu3A36yFZskXRE35XE5jD34vvauKniS5xh55g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": \"joao123\",\r\n  \"items\": [\r\n    {\r\n      \"productId\": \"item123\",\r\n      \"quantity\": 2\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://633ob0n708.execute-api.eu-west-2.amazonaws.com/prod/orders/create",
+					"protocol": "https",
+					"host": [
+						"633ob0n708",
+						"execute-api",
+						"eu-west-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"orders",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Orders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyLTEyMyIsImV4cCI6MTc3NjA3MzA4N30.lJuDuaPu3A36yFZskXRE35XE5jD34vvauKniS5xh55g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://633ob0n708.execute-api.eu-west-2.amazonaws.com/prod/orders/?limit=1",
+					"protocol": "https",
+					"host": [
+						"633ob0n708",
+						"execute-api",
+						"eu-west-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"orders",
+						""
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Order by Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyLTEyMyIsImV4cCI6MTc3NjA3MzA4N30.lJuDuaPu3A36yFZskXRE35XE5jD34vvauKniS5xh55g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://633ob0n708.execute-api.eu-west-2.amazonaws.com/prod/orders/242e4da6-2efd-4c4c-b6f5-e94c47cf3195",
+					"protocol": "https",
+					"host": [
+						"633ob0n708",
+						"execute-api",
+						"eu-west-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"orders",
+						"242e4da6-2efd-4c4c-b6f5-e94c47cf3195"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cancel Order by Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyLTEyMyIsImV4cCI6MTc3NjA3MzA4N30.lJuDuaPu3A36yFZskXRE35XE5jD34vvauKniS5xh55g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://633ob0n708.execute-api.eu-west-2.amazonaws.com/prod/orders/242e4da6-2efd-4c4c-b6f5-e94c47cf3195",
+					"protocol": "https",
+					"host": [
+						"633ob0n708",
+						"execute-api",
+						"eu-west-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"orders",
+						"242e4da6-2efd-4c4c-b6f5-e94c47cf3195"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

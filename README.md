@@ -36,6 +36,36 @@ This project is a minimal backend API to manage orders. Built with **FastAPI**, 
 | 🚀 **Security-conscious input validation** | ✅ Prevented invalid strings & XSS |
 ---
 
+## 📁 Project Structure
+
+```text
+Minimal-Orders-API-with-AWS-Integration/
+├── orders_api/                  # FastAPI application
+│   ├── app/
+│   │   ├── routes/              # Routes for orders and auth
+│   │   ├── models/              # Pydantic models
+│   │   ├── services/            # Business logic
+│   │   ├── db/                  # DynamoDB integration
+│   │   ├── exceptions/          # Custom error classes
+│   │   └── main.py              # Main app (local dev)
+│   │   └── main_lambda.py       # Entry point for AWS Lambda
+│   ├── tests/                   # Pytest test cases
+│   └── requirements.txt         # App dependencies
+│
+├── infra/                       # AWS CDK infrastructure
+│   ├── infra/                   # CDK stack definition
+│   ├── app.py                   # CDK entry point
+│   ├── cdk.json                 # CDK config
+│   └── requirements.txt         # Infra dependencies
+│
+├── Orders-API.postman_collection.json    # Postman collection
+│
+├── README.md
+└── LICENSE
+```
+
+---
+
 ## ⚙️ Local Setup
 
 ```bash
@@ -71,6 +101,16 @@ cdk deploy
 ```
 
 Your API will be available at the printed endpoint (e.g. `https://xyz.execute-api.eu-west-2.amazonaws.com/prod/`).
+
+---
+
+## 📦 Postman Collection
+
+A Postman collection is available to test the API endpoints.
+
+- File: `postman/Orders-API.postman_collection.json`
+- Format: Postman 2.1
+- Includes login, JWT-protected routes, and pagination
 
 ---
 
