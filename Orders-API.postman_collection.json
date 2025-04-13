@@ -55,7 +55,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"userId\": \"joao123\",\r\n  \"items\": [\r\n    {\r\n      \"productId\": \"item123\",\r\n      \"quantity\": 2\r\n    }\r\n  ]\r\n}",
+					"raw": "{\r\n  \"userId\": \"joaoNew\",\r\n  \"items\": [\r\n    {\r\n      \"productId\": \"itemNew\",\r\n      \"quantity\": 2\r\n    }\r\n  ]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -63,7 +63,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://633ob0n708.execute-api.eu-west-2.amazonaws.com/prod/orders/create",
+					"raw": "https://633ob0n708.execute-api.eu-west-2.amazonaws.com/prod/orders",
 					"protocol": "https",
 					"host": [
 						"633ob0n708",
@@ -74,8 +74,7 @@
 					],
 					"path": [
 						"prod",
-						"orders",
-						"create"
+						"orders"
 					]
 				}
 			},
@@ -97,7 +96,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://633ob0n708.execute-api.eu-west-2.amazonaws.com/prod/orders/?limit=1",
+					"raw": "https://633ob0n708.execute-api.eu-west-2.amazonaws.com/prod/orders?limit=10",
 					"protocol": "https",
 					"host": [
 						"633ob0n708",
@@ -108,13 +107,12 @@
 					],
 					"path": [
 						"prod",
-						"orders",
-						""
+						"orders"
 					],
 					"query": [
 						{
 							"key": "limit",
-							"value": "1"
+							"value": "10"
 						}
 					]
 				}
@@ -137,7 +135,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://633ob0n708.execute-api.eu-west-2.amazonaws.com/prod/orders/242e4da6-2efd-4c4c-b6f5-e94c47cf3195",
+					"raw": "https://633ob0n708.execute-api.eu-west-2.amazonaws.com/prod/orders/509d5ed2-24c4-4185-98ed-2ee393f0c805",
 					"protocol": "https",
 					"host": [
 						"633ob0n708",
@@ -149,7 +147,7 @@
 					"path": [
 						"prod",
 						"orders",
-						"242e4da6-2efd-4c4c-b6f5-e94c47cf3195"
+						"509d5ed2-24c4-4185-98ed-2ee393f0c805"
 					]
 				}
 			},
@@ -171,7 +169,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "https://633ob0n708.execute-api.eu-west-2.amazonaws.com/prod/orders/242e4da6-2efd-4c4c-b6f5-e94c47cf3195",
+					"raw": "https://633ob0n708.execute-api.eu-west-2.amazonaws.com/prod/orders/509d5ed2-24c4-4185-98ed-2ee393f0c805",
 					"protocol": "https",
 					"host": [
 						"633ob0n708",
@@ -183,7 +181,7 @@
 					"path": [
 						"prod",
 						"orders",
-						"242e4da6-2efd-4c4c-b6f5-e94c47cf3195"
+						"509d5ed2-24c4-4185-98ed-2ee393f0c805"
 					]
 				}
 			},
